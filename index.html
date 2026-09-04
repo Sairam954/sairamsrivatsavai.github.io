@@ -200,24 +200,18 @@
       width: 220px;
       aspect-ratio: 4 / 5;
       border-radius: 22px;
-      border: 1px dashed #aebac4;
-      background:
-        radial-gradient(circle at 50% 36%, #d8e1e7 0 16%, transparent 16.5%),
-        radial-gradient(ellipse at 50% 78%, #d8e1e7 0 28%, transparent 28.5%),
-        linear-gradient(145deg, #ffffff 0%, #eef2f5 100%);
-      display: grid;
-      place-items: end center;
-      padding: 1rem;
-      color: var(--muted);
-      font-size: 0.78rem;
-      text-align: center;
+      border: 1px solid var(--line);
+      background: var(--surface);
+      overflow: hidden;
       box-shadow: var(--shadow);
     }
 
-    .portrait-placeholder span {
-      padding: 0.35rem 0.55rem;
-      border-radius: 999px;
-      background: rgba(255, 255, 255, 0.86);
+    .portrait {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
     }
 
     .section-heading {
@@ -595,21 +589,21 @@
     <section class="hero" id="about">
       <div class="wrap hero-grid">
         <div>
-          <p class="eyebrow">Scientific computing · AI systems · photonics</p>
+          <p class="eyebrow">Performance Modelling · AI systems · Distributed Computing · Photonic Computing</p>
           <h1>Sairam Sri Vatsavai</h1>
           <p class="role">
-            <strong>Research Staff Member</strong>, Computational Science Initiative,<br>
+            <strong>Assistant Computational Scientist</strong>, Computational and Data Sciences Department,<br>
             Brookhaven National Laboratory · Upton, New York
           </p>
           <p class="intro">
-            I build simulators and learned surrogates for large scientific computing facilities,
-            and I design photonic hardware for AI. Both lines of work ask how to predict the
-            behavior of systems that are too large, too expensive, or too new to measure directly.
+           My research focuses on understanding and improving computing systems across two complementary fronts. First, I evaluate emerging computing technologies like superconducting digital logic
+            , photonics and in-memory computing
+            , by developing analytical and AI-enabled modeling frameworks that characterize their performance, identify their potential, and enable exploration of the cross-layer design space spanning device, architecture, and applications. Second, I study existing large-scale distributed computing systems for scientific workflows, with an emphasis on improving their resilience and efficiency through better workload modeling, scheduling, and resource-management policies. Together, these efforts aim to build principled tools for understanding both future computing platforms and the complex systems that support large-scale science today.
+
           </p>
           <p class="intro">
-            Before joining Brookhaven, I completed a Ph.D. in Electrical Engineering at the
-            University of Kentucky in 2024, advised by Ishan Thakkar, where I worked on photonic
-            integrated-circuit-based AI accelerators.
+            Before joining Brookhaven National Laboratory, I completed my Ph.D. in Electrical Engineering at the <a href="https://uky-ucat.github.io/index.html" target="_blank">UCAT Lab</a> at the University of Kentucky in spring 2024, under the guidance of Dr. Ishan Thakkar. My doctoral research focused on the cross-layer design and optimization of photonic integrated-circuit-based AI accelerators.
+
           </p>
 
           <div class="hero-links" aria-label="Profile links">
@@ -620,10 +614,8 @@
           </div>
         </div>
 
-        <!-- Replace this placeholder with an <img> when you have a headshot.
-             Example: <img class="portrait" src="assets/img/profile.jpg" alt="Portrait of Sairam Sri Vatsavai"> -->
-        <div class="portrait-placeholder" role="img" aria-label="Profile photo placeholder">
-          <span>Profile photo placeholder</span>
+        <div class="portrait-placeholder">
+          <img class="portrait" src="assets/img/DisplayPicture.jpg" alt="Portrait of Sairam Sri Vatsavai">
         </div>
       </div>
     </section>
@@ -632,61 +624,115 @@
       <div class="wrap">
         <div class="section-heading">
           <h2>News</h2>
-          <p class="section-note">
-            The seven most recent items are shown by default. Older entries can be expanded without
-            making the main page feel crowded.
-          </p>
         </div>
 
         <div class="news-list" id="news-list">
           <article class="news-item">
-            <div class="news-date">Sep 2026</div>
+            <div class="news-date">Aug 2026</div>
             <div>
-              <p class="news-head">TRASSE submitted to IAAI-27 <span class="flag">Latest</span></p>
-              <p class="news-detail">Learned simulator surrogates for scheduling-policy search, submitted to the Emerging Applications track.</p>
+              <p class="news-head">
+                Delivered a lightning talk and presented a poster at
+                <a href="https://www.bnl.gov/modsim/" target="_blank">ModSim 2026</a>, Seattle, WA
+              </p>
+              <p class="news-detail">
+                Presented “AI-Enabled ModSim for Distributed Computing: A Simulator-to-Surrogate Methodology for Scalable Performance Modeling.”
+              </p>
             </div>
           </article>
 
           <article class="news-item">
-            <div class="news-date">Aug 2026</div>
+            <div class="news-date">July 2026</div>
             <div>
-              <p class="news-head">COSMOS selected for an LDRD award</p>
-              <p class="news-detail">Brookhaven will fund the multidimensional photonic computing framework from October 2026 through September 2028. I lead benchmarking and evaluation.</p>
+              <p class="news-head">
+                Paper accepted at
+                <a href="https://www.escience-conference.org/2026/" target="_blank" rel="noopener noreferrer">IEEE eScience 2026</a>,
+                Naples, Italy
+              </p>
+              <p class="news-detail">
+                “CGSim: A Simulation Framework for Large Scale Distributed Computing Infrastructures with
+                AI-Driven Applications” was accepted to the 22nd IEEE International Conference on eScience,
+                to be held September 28 to October 2, 2026.
+              </p>
+            </div>
+          </article>
+          <article class="news-item">
+            <div class="news-date">Jul 2026</div>
+            <div>
+              <p class="news-head">
+                Presented a talk and poster on the REDWOOD project at the <a href="https://web.cvent.com/event/b407641b-a597-4bf2-9cba-8c39f6a7caec/summary" target="_blank">ASCR Computer Science PI Meeting</a>, on behalf of Alexei Klimentov
+              </p>
+              <p class="news-detail">
+                Presented progress updates and future directions for the REDWOOD project.
+              </p>
             </div>
           </article>
 
+          <article class="news-item">
+            <div class="news-date">Jul 2026</div>
+            <div>
+              <p class="news-head">
+                Delivered a plenary talk at <a href="https://indico.cern.ch/event/1681871/timetable/" target="_blank">ATLAS Software and Computing Week</a>, CERN, Geneva, Switzerland
+              </p>
+              <p class="news-detail">
+                Presented “Resilient Federated Workflows in a Heterogeneous Computing Environment: The REDWOOD Project.”
+              </p>
+            </div>
+          </article>
           <article class="news-item">
             <div class="news-date">Jun 2026</div>
             <div>
-              <p class="news-head">Talk at PASC 2026 in Bern</p>
-              <p class="news-detail">Presented the simulator-to-surrogate methodology for performance modeling of distributed computing.</p>
+              <p class="news-head">
+                Delivered a talk and served as a panelist at a mini-symposium during
+                <a href="https://pasc-conference.org/editions/pasc26/full-program/" target="_blank">PASC 2026</a>,
+                University of Bern, Switzerland
+              </p>
+              <p class="news-detail">
+                Presented “AI-Enabled Modeling, Simulation, and Optimization of Distributed Computing Systems.”
+              </p>
             </div>
           </article>
-
           <article class="news-item">
-            <div class="news-date">2026</div>
+              <div class="news-date">May 2026</div>
+              <div>
+                <p class="news-head">
+                  Live demonstration of AmSC-enabled LightshowAI at
+                  <a href="https://confab26.es.net/" target="_blank" rel="noopener noreferrer">Confab26</a>,
+                  Rockville, MD
+                </p>
+                <p class="news-detail">
+                  Demonstrated real-time X-ray absorption spectroscopy analysis using AmSC-enabled LightshowAI,
+                  presented under the theme of AI-enabled scientific discovery. Our Demo is featured on AmSC website <a href="https://amsc.energy.gov/#demos" target="_blank" rel="noopener noreferrer">here</a>.
+                </p>
+              </div>
+            </article>
+            <article class="news-item">
+            <div class="news-date">May 2026</div>
             <div>
-              <p class="news-head">Plenary at ATLAS Software and Computing Week</p>
-              <p class="news-detail">Grid simulation with CGSim and surrogate modeling with TRASSE.</p>
+              <p class="news-head">
+                Invited talk at
+                <a href="https://scholarsconferences.com/optics-photonics-lasers-2026/speaker/sairam-sri-vatsavai-brookhaven-national-laboratory-usa" target="_blank" rel="noopener noreferrer">Optics-Laser 2026</a>,
+                4th Innovations in Optics, Photonics, and Laser Engineering Conference, Boston, MA
+              </p>
+              <p class="news-detail">
+                Delivered an invited talk titled “Cross-Layer Design of Highly Scalable and Energy-Efficient
+                AI Accelerator Systems Using Photonic Integrated Circuits” on 18 to 19 May 2026.
+              </p>
             </div>
           </article>
-
           <article class="news-item">
-            <div class="news-date">2026</div>
-            <div>
-              <p class="news-head">Poster and talk at ModSim 2026</p>
-              <p class="news-detail">AI-enabled modeling and simulation for distributed computing, with coauthors across Brookhaven, Pittsburgh, CMU, UMass Amherst, ORNL, and SLAC.</p>
-            </div>
-          </article>
-
-          <article class="news-item">
-            <div class="news-date">Nov 2025</div>
-            <div>
-              <p class="news-head">Best Short Paper at PMBS, SC 2025</p>
-              <p class="news-detail">Awarded for CGSim, the discrete-event simulator behind the grid modeling work.</p>
-            </div>
-          </article>
-
+          <div class="news-date">May 2026</div>
+          <div>
+            <p class="news-head">
+              Promoted to Research Staff 3/Assistant Computational Scientist, at Brookhaven National Laboratory
+            </p>
+            <p class="news-detail">
+              Transitioned from Postdoctoral Research Associate to a research staff appointment in the
+              Computing and Data Sciences Department, within the Systems, Architectures, and Advanced
+              Technologies group.
+            </p>
+          </div>
+        </article>
+          
           <!-- Add older news items below this line. The script automatically keeps only the newest 7 visible. -->
         </div>
 
@@ -778,7 +824,7 @@
 
         <p class="subhead">Under review and in preparation</p>
 
-        <div class="pub-list">
+        <!-- <div class="pub-list">
           <article class="pub">
             <div class="pub-year">2026</div>
             <div>
@@ -810,7 +856,7 @@
               <p class="pub-meta">In preparation</p>
             </div>
           </article>
-        </div>
+        </div> -->
       </div>
     </section>
 
