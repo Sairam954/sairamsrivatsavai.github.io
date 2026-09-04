@@ -1,819 +1,964 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Sairam Sri Vatsavai</title>
-<meta name="description" content="Sairam Sri Vatsavai, Research Staff Member at Brookhaven National Laboratory. Performance modeling and learned surrogates for distributed scientific computing, and photonic accelerators for AI.">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sairam Sri Vatsavai</title>
+  <meta name="description" content="Sairam Sri Vatsavai, Research Staff Member at Brookhaven National Laboratory. Performance modeling and learned surrogates for distributed scientific computing, and photonic accelerators for AI.">
 
-<!--
-  ============================================================
-  STILL TO FILL IN
-  ============================================================
-  1. Add DOI or PDF links to each <a class="pub-link"> where
-     you have one, or delete the link. All currently point
-     at "#".
-  2. The CGSim entry uses a descriptive title rather than the
-     exact published one. Paste the real title in.
-  3. Author lists are omitted throughout. Add them if you want
-     the list to read as a formal bibliography.
-  4. The CV linked in the footer is the 2023 version and is
-     badly out of date.
-  5. The contact email is the Gmail address from the old site.
-     Swap in your BNL address if you would rather that be the
-     public one.
-  6. Add an ORCID link to the footer list if you have one.
-  ============================================================
--->
+  <link rel="icon" href="assets/img/pageicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Literata:opsz,wght@7..72,500;7..72,600&display=swap" rel="stylesheet">
 
-<link rel="icon" href="assets/img/pageicon.png">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,600;1,400&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-
-<style>
-  :root{
-    --paper:#edf0f2;
-    --paper-deep:#e3e8eb;
-    --ink:#0f1c24;
-    --slate:#59707e;
-    --rule:#c9d4da;
-    --ch1:#0d7c8a;
-    --ch2:#7a3e9d;
-
-    --serif:"Spectral",Georgia,serif;
-    --sans:"IBM Plex Sans",system-ui,sans-serif;
-
-    --measure:34rem;
-    --gutter:clamp(1.5rem,5vw,4rem);
-  }
-
-  *{box-sizing:border-box}
-
-  html{-webkit-text-size-adjust:100%}
-
-  body{
-    margin:0;
-    background:var(--paper);
-    color:var(--ink);
-    font-family:var(--serif);
-    font-weight:300;
-    font-size:clamp(1.0625rem,0.98rem + 0.4vw,1.1875rem);
-    line-height:1.65;
-    -webkit-font-smoothing:antialiased;
-  }
-
-  .wrap{
-    max-width:58rem;
-    margin:0 auto;
-    padding:0 var(--gutter);
-  }
-
-  a{color:inherit}
-
-  a:focus-visible,
-  .pub-link:focus-visible{
-    outline:2px solid var(--ch1);
-    outline-offset:3px;
-    border-radius:1px;
-  }
-
-  /* ---------- masthead ---------- */
-
-  .masthead{padding:clamp(3rem,8vw,5.5rem) 0 0}
-
-  .name{
-    font-family:var(--serif);
-    font-weight:600;
-    font-size:clamp(2.25rem,1.6rem + 3.2vw,3.75rem);
-    line-height:1.02;
-    letter-spacing:-0.02em;
-    margin:0;
-  }
-
-  .standfirst{
-    font-family:var(--sans);
-    font-weight:400;
-    font-size:clamp(0.9375rem,0.9rem + 0.2vw,1.0625rem);
-    line-height:1.5;
-    color:var(--slate);
-    margin:1rem 0 0;
-    max-width:30rem;
-  }
-
-  .standfirst b{color:var(--ink);font-weight:500}
-
-  nav.top{
-    margin-top:1.75rem;
-    font-family:var(--sans);
-    font-size:0.9375rem;
-    display:flex;
-    flex-wrap:wrap;
-    gap:0 1.5rem;
-  }
-
-  nav.top a{
-    text-decoration:none;
-    color:var(--slate);
-    padding:0.35rem 0;
-    border-bottom:1px solid transparent;
-  }
-
-  nav.top a:hover{color:var(--ink);border-bottom-color:var(--rule)}
-
-  /* ---------- waveguide figure ---------- */
-
-  .guide{
-    margin:clamp(2.5rem,6vw,4rem) 0 0;
-  }
-
-  .guide svg{display:block;width:100%;height:auto}
-
-  .bus{
-    stroke:var(--ink);
-    stroke-opacity:0.42;
-    stroke-width:2.5;
-    fill:none;
-  }
-
-  .tap{stroke-width:2.5;fill:none;stroke-linecap:round}
-  .tap.one{stroke:var(--ch1)}
-  .tap.two{stroke:var(--ch2)}
-
-  @media (prefers-reduced-motion:no-preference){
-    .bus{
-      stroke-dasharray:1200;
-      stroke-dashoffset:1200;
-      animation:draw 1.1s cubic-bezier(.22,.61,.36,1) forwards;
+  <style>
+    :root {
+      --bg: #f7f8fa;
+      --surface: #ffffff;
+      --surface-soft: #f0f4f7;
+      --ink: #17212b;
+      --muted: #647382;
+      --line: #dbe2e8;
+      --accent: #087c89;
+      --accent-soft: #e7f4f5;
+      --accent-2: #70419a;
+      --max: 70rem;
+      --content: 46rem;
+      --radius: 14px;
+      --shadow: 0 12px 36px rgba(22, 35, 47, 0.06);
+      --sans: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --serif: "Literata", Georgia, serif;
     }
-    .tap{opacity:0;animation:settle .55s ease-out forwards}
-    .ring-a{animation-delay:.75s}
-    .ring-b{animation-delay:.95s}
-  }
 
-  @keyframes draw{to{stroke-dashoffset:0}}
-  @keyframes settle{to{opacity:1}}
+    * { box-sizing: border-box; }
 
-  /* ---------- generic section ---------- */
+    html {
+      scroll-behavior: smooth;
+      -webkit-text-size-adjust: 100%;
+    }
 
-  section{padding:clamp(3rem,7vw,4.75rem) 0}
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-size: 1rem;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
 
-  section + section{border-top:1px solid var(--rule)}
+    a { color: inherit; }
 
-  h2{
-    font-family:var(--serif);
-    font-weight:600;
-    font-size:clamp(1.375rem,1.2rem + 0.7vw,1.75rem);
-    letter-spacing:-0.01em;
-    line-height:1.2;
-    margin:0 0 1.75rem;
-  }
+    a:focus-visible,
+    button:focus-visible {
+      outline: 3px solid rgba(8, 124, 137, 0.28);
+      outline-offset: 3px;
+    }
 
-  h3{
-    font-family:var(--serif);
-    font-weight:600;
-    font-size:1.125rem;
-    line-height:1.3;
-    margin:0 0 0.5rem;
-  }
+    .wrap {
+      width: min(calc(100% - 2rem), var(--max));
+      margin: 0 auto;
+    }
 
-  p{max-width:var(--measure)}
+    .site-header {
+      background: rgba(247, 248, 250, 0.94);
+      border-bottom: 1px solid var(--line);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(14px);
+    }
 
-  .lede{
-    font-size:clamp(1.1875rem,1.05rem + 0.6vw,1.4375rem);
-    line-height:1.55;
-    font-weight:300;
-    margin:0 0 1.25rem;
-    max-width:38rem;
-  }
+    .nav-bar {
+      min-height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
 
-  /* ---------- research threads ---------- */
+    .brand {
+      font-family: var(--serif);
+      font-weight: 600;
+      text-decoration: none;
+      letter-spacing: -0.02em;
+    }
 
-  .threads{
-    display:grid;
-    gap:2.5rem;
-    grid-template-columns:1fr;
-  }
+    .top-nav {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 0.2rem 0.9rem;
+      font-size: 0.875rem;
+      color: var(--muted);
+    }
 
-  @media (min-width:44rem){
-    .threads{grid-template-columns:1fr 1fr;gap:3rem}
-  }
+    .top-nav a {
+      text-decoration: none;
+      padding: 0.35rem 0.1rem;
+      border-bottom: 1px solid transparent;
+    }
 
-  .thread{
-    padding-left:1.25rem;
-    border-left:2px solid var(--rule);
-  }
+    .top-nav a:hover {
+      color: var(--ink);
+      border-bottom-color: var(--ink);
+    }
 
-  .thread.one{border-left-color:var(--ch1)}
-  .thread.two{border-left-color:var(--ch2)}
+    main { display: block; }
 
-  .thread p{margin:0;font-size:1rem;line-height:1.6}
+    section {
+      padding: clamp(3.75rem, 7vw, 6.25rem) 0;
+    }
 
-  /* ---------- news ---------- */
+    section + section {
+      border-top: 1px solid var(--line);
+    }
 
-  #news{background:var(--paper-deep)}
+    .hero {
+      padding-top: clamp(3.5rem, 8vw, 6.5rem);
+      border-top: 0;
+    }
 
-  .news-item{
-    display:grid;
-    grid-template-columns:1fr;
-    gap:0.15rem 2rem;
-    padding:1.15rem 0;
-    border-top:1px solid #bcc9d1;
-  }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 220px;
+      gap: clamp(2.5rem, 7vw, 6rem);
+      align-items: center;
+    }
 
-  .news-item:first-of-type{border-top:none;padding-top:0}
+    .eyebrow {
+      margin: 0 0 0.9rem;
+      color: var(--accent);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
 
-  @media (min-width:40rem){
-    .news-item{grid-template-columns:6rem 1fr}
-  }
+    h1, h2, h3 {
+      font-family: var(--serif);
+      color: var(--ink);
+    }
 
-  .news-date{
-    font-family:var(--sans);
-    font-weight:500;
-    font-size:0.875rem;
-    color:var(--slate);
-    padding-top:0.32rem;
-    font-variant-numeric:tabular-nums;
-  }
+    h1 {
+      margin: 0;
+      font-size: clamp(2.8rem, 6vw, 5.2rem);
+      line-height: 1.02;
+      letter-spacing: -0.045em;
+      font-weight: 600;
+    }
 
-  .news-head{
-    font-family:var(--serif);
-    font-weight:600;
-    font-size:1.125rem;
-    line-height:1.35;
-    margin:0 0 0.25rem;
-    max-width:34rem;
-  }
+    .role {
+      margin: 1.2rem 0 0;
+      max-width: 42rem;
+      font-size: clamp(1.05rem, 2vw, 1.25rem);
+      color: var(--muted);
+      line-height: 1.55;
+    }
 
-  .news-detail{
-    font-family:var(--sans);
-    font-size:0.9375rem;
-    line-height:1.5;
-    color:var(--slate);
-    margin:0;
-    max-width:34rem;
-  }
+    .role strong {
+      color: var(--ink);
+      font-weight: 600;
+    }
 
-  /* ---------- publications ---------- */
+    .intro {
+      margin: 1.5rem 0 0;
+      max-width: 44rem;
+      font-size: 1.05rem;
+      color: #344350;
+    }
 
-  .pub{
-    display:grid;
-    grid-template-columns:1fr;
-    gap:0.25rem 2rem;
-    padding:1.25rem 0;
-    border-top:1px solid var(--rule);
-  }
+    .hero-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+      margin-top: 1.75rem;
+    }
 
-  .pub:first-of-type{border-top:none;padding-top:0}
+    .button-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 42px;
+      padding: 0.6rem 0.85rem;
+      border: 1px solid var(--line);
+      border-radius: 9px;
+      background: var(--surface);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 600;
+      box-shadow: 0 1px 1px rgba(22, 35, 47, 0.02);
+    }
 
-  @media (min-width:40rem){
-    .pub{grid-template-columns:6rem 1fr}
-  }
+    .button-link:hover {
+      border-color: #bcc7d0;
+      transform: translateY(-1px);
+    }
 
-  .pub-year{
-    font-family:var(--sans);
-    font-weight:500;
-    font-size:0.875rem;
-    color:var(--slate);
-    padding-top:0.3rem;
-    font-variant-numeric:tabular-nums;
-  }
+    .portrait-placeholder {
+      width: 220px;
+      aspect-ratio: 4 / 5;
+      border-radius: 22px;
+      border: 1px dashed #aebac4;
+      background:
+        radial-gradient(circle at 50% 36%, #d8e1e7 0 16%, transparent 16.5%),
+        radial-gradient(ellipse at 50% 78%, #d8e1e7 0 28%, transparent 28.5%),
+        linear-gradient(145deg, #ffffff 0%, #eef2f5 100%);
+      display: grid;
+      place-items: end center;
+      padding: 1rem;
+      color: var(--muted);
+      font-size: 0.78rem;
+      text-align: center;
+      box-shadow: var(--shadow);
+    }
 
-  .pub-title{
-    font-weight:400;
-    font-size:1.0625rem;
-    line-height:1.4;
-    margin:0 0 0.3rem;
-    max-width:36rem;
-  }
+    .portrait-placeholder span {
+      padding: 0.35rem 0.55rem;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.86);
+    }
 
-  .pub-meta{
-    font-family:var(--sans);
-    font-size:0.875rem;
-    color:var(--slate);
-    margin:0;
-    max-width:36rem;
-  }
+    .section-heading {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+      gap: 2rem;
+      align-items: start;
+      margin-bottom: 2.25rem;
+    }
 
-  .pub-meta em{font-style:normal;color:var(--ink)}
+    h2 {
+      margin: 0;
+      font-size: clamp(1.7rem, 3vw, 2.3rem);
+      line-height: 1.15;
+      letter-spacing: -0.025em;
+      font-weight: 600;
+    }
 
-  .flag{
-    display:inline-block;
-    font-family:var(--sans);
-    font-size:0.75rem;
-    font-weight:500;
-    color:var(--ch1);
-    border:1px solid var(--ch1);
-    border-radius:2px;
-    padding:0.05rem 0.4rem;
-    margin-left:0.5rem;
-    vertical-align:1px;
-  }
+    .section-note {
+      max-width: var(--content);
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
 
-  .pub-link{
-    font-family:var(--sans);
-    font-size:0.875rem;
-    text-decoration:none;
-    border-bottom:1px solid var(--rule);
-    color:var(--slate);
-  }
+    h3 {
+      margin: 0 0 0.55rem;
+      font-size: 1.15rem;
+      line-height: 1.35;
+      font-weight: 600;
+    }
 
-  .pub-link:hover{color:var(--ink);border-bottom-color:var(--ink)}
+    .news-list,
+    .pub-list {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: 0 1px 1px rgba(22, 35, 47, 0.02);
+    }
 
-  .subhead{
-    font-family:var(--sans);
-    font-weight:600;
-    font-size:0.9375rem;
-    margin:2.75rem 0 1.25rem;
-    color:var(--ink);
-  }
+    .news-item,
+    .pub {
+      display: grid;
+      grid-template-columns: 7rem minmax(0, 1fr);
+      gap: 1.5rem;
+      padding: 1.25rem 1.4rem;
+      border-top: 1px solid var(--line);
+    }
 
-  /* ---------- projects ---------- */
+    .news-item:first-child,
+    .pub:first-child { border-top: 0; }
 
-  .projects{display:grid;gap:2rem;grid-template-columns:1fr}
+    .news-date,
+    .pub-year {
+      padding-top: 0.15rem;
+      color: var(--muted);
+      font-size: 0.82rem;
+      font-weight: 600;
+      font-variant-numeric: tabular-nums;
+    }
 
-  @media (min-width:44rem){
-    .projects{grid-template-columns:1fr 1fr;gap:2.5rem 3rem}
-  }
+    .news-head,
+    .pub-title {
+      margin: 0;
+      color: var(--ink);
+      font-family: var(--serif);
+      font-weight: 600;
+      line-height: 1.4;
+    }
 
-  .project p{margin:0;font-size:1rem;line-height:1.6}
+    .news-detail,
+    .pub-meta {
+      margin: 0.35rem 0 0;
+      max-width: 48rem;
+      color: var(--muted);
+      font-size: 0.9rem;
+      line-height: 1.55;
+    }
 
-  .dot{
-    display:inline-block;
-    width:0.55rem;
-    height:0.55rem;
-    border-radius:50%;
-    margin-right:0.5rem;
-    vertical-align:0.08rem;
-  }
+    .pub-meta em {
+      color: var(--ink);
+      font-style: normal;
+    }
 
-  .dot.one{background:var(--ch1)}
-  .dot.two{background:var(--ch2)}
+    .flag {
+      display: inline-block;
+      margin-left: 0.45rem;
+      padding: 0.08rem 0.4rem;
+      border: 1px solid #9dc9ce;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-family: var(--sans);
+      font-size: 0.68rem;
+      font-weight: 700;
+      vertical-align: 0.12rem;
+      white-space: nowrap;
+    }
 
-  /* ---------- two column list ---------- */
+    .pub-link {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+    }
 
-  .cols{
-    display:grid;
-    gap:2rem 3rem;
-    grid-template-columns:1fr;
-  }
+    .pub-link:hover { text-decoration: underline; }
 
-  @media (min-width:44rem){
-    .cols{grid-template-columns:1fr 1fr}
-  }
+    .news-item.is-older[hidden] { display: none; }
 
-  .plain{list-style:none;margin:0;padding:0}
+    .news-actions {
+      display: flex;
+      justify-content: center;
+      margin-top: 1.2rem;
+    }
 
-  .plain li{
-    padding:0.5rem 0;
-    border-top:1px solid var(--rule);
-    font-size:1rem;
-    line-height:1.5;
-  }
+    .toggle-button {
+      min-height: 42px;
+      padding: 0.6rem 0.95rem;
+      border: 1px solid var(--line);
+      border-radius: 9px;
+      background: var(--surface);
+      color: var(--ink);
+      font: inherit;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+    }
 
-  .plain li:first-child{border-top:none}
+    .toggle-button:hover { border-color: #b9c5ce; }
 
-  .plain .where{
-    font-family:var(--sans);
-    font-size:0.8125rem;
-    color:var(--slate);
-    display:block;
-  }
+    .subhead {
+      margin: 3rem 0 1rem;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
 
-  /* ---------- footer ---------- */
+    .threads,
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+    }
 
-  footer{
-    background:var(--paper-deep);
-    border-top:1px solid var(--rule);
-    padding:clamp(2.5rem,6vw,3.5rem) 0;
-    margin-top:0;
-  }
+    .card {
+      min-height: 100%;
+      padding: 1.45rem;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+    }
 
-  .contact{
-    display:flex;
-    flex-wrap:wrap;
-    gap:0.75rem 2rem;
-    font-family:var(--sans);
-    font-size:0.9375rem;
-    margin:0 0 1.5rem;
-    padding:0;
-    list-style:none;
-  }
+    .card p {
+      margin: 0;
+      color: #465563;
+      font-size: 0.94rem;
+    }
 
-  .contact a{text-decoration:none;border-bottom:1px solid var(--rule)}
-  .contact a:hover{border-bottom-color:var(--ink)}
+    .thread.one { border-top: 3px solid var(--accent); }
+    .thread.two { border-top: 3px solid var(--accent-2); }
 
-  .colophon{
-    font-family:var(--sans);
-    font-size:0.8125rem;
-    color:var(--slate);
-    margin:0;
-    max-width:34rem;
-  }
-</style>
+    .project h3::before {
+      content: "";
+      display: inline-block;
+      width: 0.52rem;
+      height: 0.52rem;
+      margin-right: 0.55rem;
+      border-radius: 50%;
+      background: var(--accent);
+      vertical-align: 0.08rem;
+    }
+
+    .project:nth-child(even) h3::before { background: var(--accent-2); }
+
+    .table-wrap {
+      overflow-x: auto;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+    }
+
+    .service-table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 34rem;
+      font-size: 0.92rem;
+    }
+
+    .service-table th,
+    .service-table td {
+      padding: 0.9rem 1rem;
+      text-align: left;
+      vertical-align: top;
+      border-top: 1px solid var(--line);
+    }
+
+    .service-table thead th {
+      border-top: 0;
+      background: var(--surface-soft);
+      color: var(--muted);
+      font-size: 0.74rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    .service-table th[scope="row"] {
+      width: 9rem;
+      color: var(--ink);
+      font-weight: 700;
+      background: var(--surface-soft);
+    }
+
+    .review-list {
+      margin: 0;
+      padding-left: 1.2rem;
+    }
+
+    .review-list li + li {
+      margin-top: 0.35rem;
+    }
+
+    .talks {
+      display: grid;
+      gap: 0;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+      overflow: hidden;
+    }
+
+    .talk {
+      display: grid;
+      grid-template-columns: 8rem minmax(0, 1fr);
+      gap: 1.2rem;
+      padding: 1.2rem 1.4rem;
+      border-top: 1px solid var(--line);
+    }
+
+    .talk:first-child { border-top: 0; }
+
+    .talk-meta {
+      color: var(--muted);
+      font-size: 0.82rem;
+      font-weight: 600;
+    }
+
+    .talk-title {
+      margin: 0;
+      font-family: var(--serif);
+      font-weight: 600;
+      line-height: 1.4;
+    }
+
+    .talk-venue {
+      margin: 0.25rem 0 0;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    footer {
+      padding: 2.5rem 0 3.5rem;
+      border-top: 1px solid var(--line);
+      background: var(--surface-soft);
+    }
+
+    .footer-grid {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .contact {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem 1.2rem;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .contact a {
+      text-decoration: none;
+      border-bottom: 1px solid #bbc6ce;
+    }
+
+    .contact a:hover { border-bottom-color: var(--ink); }
+
+    .colophon {
+      margin: 0;
+      max-width: 29rem;
+      color: var(--muted);
+      font-size: 0.78rem;
+      text-align: right;
+    }
+
+    @media (max-width: 760px) {
+      .site-header { position: static; }
+
+      .nav-bar {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 1rem 0;
+      }
+
+      .top-nav { justify-content: flex-start; }
+
+      .hero-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .portrait-placeholder {
+        width: min(220px, 65vw);
+        order: -1;
+      }
+
+      .section-heading {
+        grid-template-columns: 1fr;
+        gap: 0.65rem;
+      }
+
+      .threads,
+      .projects {
+        grid-template-columns: 1fr;
+      }
+
+      .news-item,
+      .pub,
+      .talk {
+        grid-template-columns: 1fr;
+        gap: 0.35rem;
+      }
+
+      .news-date,
+      .pub-year,
+      .talk-meta { padding-top: 0; }
+
+      .colophon { text-align: left; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        scroll-behavior: auto !important;
+        transition: none !important;
+      }
+    }
+  </style>
 </head>
 
 <body>
-
-<header class="masthead">
-  <div class="wrap">
-    <h1 class="name">Sairam Sri Vatsavai</h1>
-    <p class="standfirst">
-      <b>Research Staff Member</b>, Computational Science Initiative,
-      Brookhaven National Laboratory. Upton, New York.
-    </p>
-
-    <nav class="top" aria-label="Sections">
-      <a href="#news">News</a>
-      <a href="#publications">Publications</a>
-      <a href="#research">Research</a>
-      <a href="#projects">Projects</a>
-      <a href="#service">Service and talks</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </div>
-
-  <div class="wrap guide">
-    <svg viewBox="0 0 1200 120" role="img" aria-label="A waveguide bus with two microring taps, one for each research thread.">
-      <path class="bus" d="M0 78 H1200"/>
-      <g class="tap one ring-a">
-        <circle cx="400" cy="50" r="22"/>
-        <path d="M310 22 H490"/>
-      </g>
-      <g class="tap two ring-b">
-        <circle cx="800" cy="50" r="22"/>
-        <path d="M710 22 H890"/>
-      </g>
-    </svg>
-  </div>
-</header>
-
-<main>
-
-  <section id="about">
-    <div class="wrap">
-      <p class="lede">
-        I build simulators and learned surrogates for large scientific computing
-        facilities, and I design photonic hardware for AI. Both lines of work ask
-        the same question, which is how to predict the behavior of a system that is
-        too large, too expensive, or too new to measure directly.
-      </p>
-      <p>
-        Before joining Brookhaven I completed a Ph.D. in Electrical Engineering at
-        the University of Kentucky in 2024, advised by Ishan Thakkar, where I worked
-        on photonic integrated circuit based AI accelerators.
-      </p>
+  <header class="site-header">
+    <div class="wrap nav-bar">
+      <a class="brand" href="#top">Sairam Sri Vatsavai</a>
+      <nav class="top-nav" aria-label="Primary navigation">
+        <a href="#news">News</a>
+        <a href="#research">Research</a>
+        <a href="#publications">Publications</a>
+        <a href="#projects">Projects</a>
+        <a href="#service">Service</a>
+        <a href="#talks">Talks</a>
+        <a href="#contact">Contact</a>
+      </nav>
     </div>
-  </section>
+  </header>
 
-  <section id="news">
-    <div class="wrap">
-      <h2>News</h2>
-
-      <div class="news-item">
-        <div class="news-date">Sep 2026</div>
+  <main id="top">
+    <section class="hero" id="about">
+      <div class="wrap hero-grid">
         <div>
-          <p class="news-head">
-            TRASSE submitted to IAAI-27
-            <span class="flag">Latest</span>
+          <p class="eyebrow">Scientific computing · AI systems · photonics</p>
+          <h1>Sairam Sri Vatsavai</h1>
+          <p class="role">
+            <strong>Research Staff Member</strong>, Computational Science Initiative,<br>
+            Brookhaven National Laboratory · Upton, New York
           </p>
-          <p class="news-detail">
-            Learned simulator surrogates for scheduling-policy search, submitted to
-            the Emerging Applications track.
+          <p class="intro">
+            I build simulators and learned surrogates for large scientific computing facilities,
+            and I design photonic hardware for AI. Both lines of work ask how to predict the
+            behavior of systems that are too large, too expensive, or too new to measure directly.
           </p>
+          <p class="intro">
+            Before joining Brookhaven, I completed a Ph.D. in Electrical Engineering at the
+            University of Kentucky in 2024, advised by Ishan Thakkar, where I worked on photonic
+            integrated-circuit-based AI accelerators.
+          </p>
+
+          <div class="hero-links" aria-label="Profile links">
+            <a class="button-link" href="https://scholar.google.com/citations?user=RZe7BroAAAAJ&amp;hl=en">Google Scholar</a>
+            <a class="button-link" href="https://github.com/Sairam954/">GitHub</a>
+            <a class="button-link" href="https://www.linkedin.com/in/sairam-sri-vatsavai-27311290/">LinkedIn</a>
+            <a class="button-link" href="assets/Sairam_Sri_Vatsavai_CV.pdf">CV</a>
+          </div>
+        </div>
+
+        <!-- Replace this placeholder with an <img> when you have a headshot.
+             Example: <img class="portrait" src="assets/img/profile.jpg" alt="Portrait of Sairam Sri Vatsavai"> -->
+        <div class="portrait-placeholder" role="img" aria-label="Profile photo placeholder">
+          <span>Profile photo placeholder</span>
         </div>
       </div>
+    </section>
 
-      <div class="news-item">
-        <div class="news-date">Aug 2026</div>
-        <div>
-          <p class="news-head">COSMOS selected for an LDRD award</p>
-          <p class="news-detail">
-            Brookhaven will fund the multidimensional photonic computing framework
-            from October 2026 through September 2028. I lead benchmarking and
-            evaluation.
+    <section id="news">
+      <div class="wrap">
+        <div class="section-heading">
+          <h2>News</h2>
+          <p class="section-note">
+            The seven most recent items are shown by default. Older entries can be expanded without
+            making the main page feel crowded.
           </p>
         </div>
-      </div>
 
-      <div class="news-item">
-        <div class="news-date">Jun 2026</div>
-        <div>
-          <p class="news-head">Talk at PASC 2026 in Bern</p>
-          <p class="news-detail">
-            Presented the simulator-to-surrogate methodology for performance
-            modeling of distributed computing.
-          </p>
+        <div class="news-list" id="news-list">
+          <article class="news-item">
+            <div class="news-date">Sep 2026</div>
+            <div>
+              <p class="news-head">TRASSE submitted to IAAI-27 <span class="flag">Latest</span></p>
+              <p class="news-detail">Learned simulator surrogates for scheduling-policy search, submitted to the Emerging Applications track.</p>
+            </div>
+          </article>
+
+          <article class="news-item">
+            <div class="news-date">Aug 2026</div>
+            <div>
+              <p class="news-head">COSMOS selected for an LDRD award</p>
+              <p class="news-detail">Brookhaven will fund the multidimensional photonic computing framework from October 2026 through September 2028. I lead benchmarking and evaluation.</p>
+            </div>
+          </article>
+
+          <article class="news-item">
+            <div class="news-date">Jun 2026</div>
+            <div>
+              <p class="news-head">Talk at PASC 2026 in Bern</p>
+              <p class="news-detail">Presented the simulator-to-surrogate methodology for performance modeling of distributed computing.</p>
+            </div>
+          </article>
+
+          <article class="news-item">
+            <div class="news-date">2026</div>
+            <div>
+              <p class="news-head">Plenary at ATLAS Software and Computing Week</p>
+              <p class="news-detail">Grid simulation with CGSim and surrogate modeling with TRASSE.</p>
+            </div>
+          </article>
+
+          <article class="news-item">
+            <div class="news-date">2026</div>
+            <div>
+              <p class="news-head">Poster and talk at ModSim 2026</p>
+              <p class="news-detail">AI-enabled modeling and simulation for distributed computing, with coauthors across Brookhaven, Pittsburgh, CMU, UMass Amherst, ORNL, and SLAC.</p>
+            </div>
+          </article>
+
+          <article class="news-item">
+            <div class="news-date">Nov 2025</div>
+            <div>
+              <p class="news-head">Best Short Paper at PMBS, SC 2025</p>
+              <p class="news-detail">Awarded for CGSim, the discrete-event simulator behind the grid modeling work.</p>
+            </div>
+          </article>
+
+          <!-- Add older news items below this line. The script automatically keeps only the newest 7 visible. -->
+        </div>
+
+        <div class="news-actions">
+          <button class="toggle-button" id="news-toggle" type="button" aria-controls="news-list" aria-expanded="false" hidden>
+            Show older news
+          </button>
         </div>
       </div>
+    </section>
 
-      <div class="news-item">
-        <div class="news-date">2026</div>
-        <div>
-          <p class="news-head">Plenary at ATLAS Software and Computing Week</p>
-          <p class="news-detail">
-            Grid simulation with CGSim and surrogate modeling with TRASSE.
-          </p>
+    <section id="research">
+      <div class="wrap">
+        <div class="section-heading">
+          <h2>Research</h2>
+          <p class="section-note">Two connected threads: modeling complex computing systems, and designing alternative hardware for AI.</p>
+        </div>
+
+        <div class="threads">
+          <article class="card thread one">
+            <h3>Modeling and surrogates for distributed computing</h3>
+            <p>Discrete-event simulators reproduce the behavior of production grids, and learned surrogates stand in for them once a search needs thousands of rollouts. The goal is scheduling-policy search at facilities where a single real experiment costs weeks of grid time.</p>
+          </article>
+
+          <article class="card thread two">
+            <h3>Photonic and beyond-CMOS accelerators</h3>
+            <p>Microring and interferometric meshes can carry many computations at once across wavelength, time, spatial mode, and polarization. My work spans the device models, the mapping from workload to degrees of freedom, and the benchmarking that decides whether any of it beats a GPU.</p>
+          </article>
         </div>
       </div>
+    </section>
 
-      <div class="news-item">
-        <div class="news-date">2026</div>
-        <div>
-          <p class="news-head">Poster and talk at ModSim 2026</p>
-          <p class="news-detail">
-            AI-enabled modeling and simulation for distributed computing, with
-            coauthors across Brookhaven, Pittsburgh, CMU, UMass Amherst, ORNL, and
-            SLAC.
-          </p>
+    <section id="publications">
+      <div class="wrap">
+        <div class="section-heading">
+          <h2>Publications</h2>
+          <p class="section-note">Selected peer-reviewed work, followed by manuscripts currently under review or in preparation.</p>
+        </div>
+
+        <div class="pub-list">
+          <article class="pub">
+            <div class="pub-year">2026</div>
+            <div>
+              <p class="pub-title">Predicting job turnaround time in large-scale distributed computing environments with graph neural networks</p>
+              <p class="pub-meta"><em>EPJ Research Infrastructures</em>, volume 10, article 14 &nbsp;<a class="pub-link" href="#">Paper</a></p>
+            </div>
+          </article>
+
+          <article class="pub">
+            <div class="pub-year">2025</div>
+            <div>
+              <p class="pub-title">CGSim, a SimGrid-based discrete-event simulator for distributed scientific computing <span class="flag">Best short paper</span></p>
+              <p class="pub-meta"><em>PMBS Workshop at SC 2025</em> &nbsp;<a class="pub-link" href="#">Paper</a></p>
+            </div>
+          </article>
+
+          <article class="pub">
+            <div class="pub-year">2025</div>
+            <div>
+              <p class="pub-title">HEANA, a hybrid time-amplitude analog optical accelerator with flexible dataflows for energy-efficient CNN inference</p>
+              <p class="pub-meta"><em>ACM Transactions on Design Automation of Electronic Systems</em>, volume 30, issue 2 &nbsp;<a class="pub-link" href="#">Paper</a></p>
+            </div>
+          </article>
+
+          <article class="pub">
+            <div class="pub-year">2023</div>
+            <div>
+              <p class="pub-title">SCONNA, a stochastic computing based optical accelerator for ultra-fast, energy-efficient inference of integer-quantized CNNs</p>
+              <p class="pub-meta"><em>IEEE International Parallel and Distributed Processing Symposium</em> &nbsp;<a class="pub-link" href="#">Paper</a></p>
+            </div>
+          </article>
+
+          <article class="pub">
+            <div class="pub-year">2022</div>
+            <div>
+              <p class="pub-title">Photonic reconfigurable accelerators for efficient inference of CNNs with mixed-sized tensors</p>
+              <p class="pub-meta"><em>IEEE Transactions on Computer-Aided Design of Integrated Circuits and Systems</em>, volume 41, issue 11 &nbsp;<a class="pub-link" href="#">Paper</a></p>
+            </div>
+          </article>
+
+          <article class="pub">
+            <div class="pub-year">2020</div>
+            <div>
+              <p class="pub-title">PROTEUS, rule-based self-adaptation in photonic NoCs for loss-aware co-management of laser power and performance</p>
+              <p class="pub-meta"><em>IEEE/ACM International Symposium on Networks-on-Chip</em> &nbsp;<a class="pub-link" href="#">Paper</a></p>
+            </div>
+          </article>
+        </div>
+
+        <p class="subhead">Under review and in preparation</p>
+
+        <div class="pub-list">
+          <article class="pub">
+            <div class="pub-year">2026</div>
+            <div>
+              <p class="pub-title">TRASSE, learned simulator surrogates for scheduling-policy search at distributed scientific computing facilities</p>
+              <p class="pub-meta">Under review</p>
+            </div>
+          </article>
+
+          <article class="pub">
+            <div class="pub-year">2026</div>
+            <div>
+              <p class="pub-title">HOLOS, gradient-based design space exploration for LLM parallelism and hardware co-design</p>
+              <p class="pub-meta">Under review</p>
+            </div>
+          </article>
+
+          <article class="pub">
+            <div class="pub-year">2026</div>
+            <div>
+              <p class="pub-title">Analytical modeling of superconducting digital systems for large language model inference and training</p>
+              <p class="pub-meta">Under review, <em>IEEE Transactions on Computers</em></p>
+            </div>
+          </article>
+
+          <article class="pub">
+            <div class="pub-year">2026</div>
+            <div>
+              <p class="pub-title">An agentic extension of LightshowAI with standardized tool interfaces for XANES analysis</p>
+              <p class="pub-meta">In preparation</p>
+            </div>
+          </article>
         </div>
       </div>
+    </section>
 
-      <div class="news-item">
-        <div class="news-date">Nov 2025</div>
-        <div>
-          <p class="news-head">Best Short Paper at PMBS, SC 2025</p>
-          <p class="news-detail">
-            Awarded for CGSim, the discrete-event simulator behind the grid modeling
-            work.
-          </p>
+    <section id="projects">
+      <div class="wrap">
+        <div class="section-heading">
+          <h2>Projects</h2>
+          <p class="section-note">Current research efforts spanning scientific infrastructure, photonic computing, X-ray science, and system co-design.</p>
+        </div>
+
+        <div class="projects">
+          <article class="card project">
+            <h3>REDWOOD</h3>
+            <p>A DOE ASCR project on modeling and optimizing scientific cyberinfrastructure. I build the simulation and surrogate stack, CGSim and TRASSE, and the training pipelines that cover 74 WLCG sites.</p>
+          </article>
+
+          <article class="card project">
+            <h3>COSMOS</h3>
+            <p>A Brookhaven LDRD on simulation-driven co-design of multidimensional photonic computing systems. I am a co-investigator leading benchmarking and evaluation against GPU, TPU, and single-degree-of-freedom photonic baselines.</p>
+          </article>
+
+          <article class="card project">
+            <h3>LightshowAI</h3>
+            <p>An X-ray absorption spectroscopy platform for NSLS-II. I work on federated authentication, streaming beamline data, and the agentic layer that exposes surrogate models and materials databases as tools.</p>
+          </article>
+
+          <article class="card project">
+            <h3>HOLOS</h3>
+            <p>A gradient-descent design space exploration framework that searches parallelism strategy and accelerator geometry together, across CMOS and superconducting digital technologies.</p>
+          </article>
         </div>
       </div>
+    </section>
 
+    <section id="service">
+      <div class="wrap">
+        <div class="section-heading">
+          <h2>Service</h2>
+          <p class="section-note">Reviewing activity separated by journals and conferences for faster scanning.</p>
+        </div>
+
+        <div class="table-wrap">
+          <table class="service-table">
+            <tbody>
+              <tr>
+                <th scope="row">Journals</th>
+                <td>
+                  <ul class="review-list">
+                    <li>IEEE Transactions on Computers</li>
+                    <li>IEEE Transactions on Computer-Aided Design</li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Conferences</th>
+                <td>
+                  <ul class="review-list">
+                    <li>SC 2025</li>
+                    <li>VLSI Design</li>
+                    <li>Great Lakes Symposium on VLSI</li>
+                  </ul>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section id="talks">
+      <div class="wrap">
+        <div class="section-heading">
+          <h2>Talks</h2>
+          <p class="section-note">Selected recent presentations, separated from professional service.</p>
+        </div>
+
+        <div class="talks">
+          <article class="talk">
+            <div class="talk-meta">2026</div>
+            <div>
+              <p class="talk-title">Simulator-to-surrogate performance modeling for distributed computing</p>
+              <p class="talk-venue">PASC 2026 · Bern</p>
+            </div>
+          </article>
+
+          <article class="talk">
+            <div class="talk-meta">2026</div>
+            <div>
+              <p class="talk-title">Grid simulation and surrogates for ATLAS</p>
+              <p class="talk-venue">ATLAS Software and Computing Week · Plenary</p>
+            </div>
+          </article>
+
+          <article class="talk">
+            <div class="talk-meta">2026</div>
+            <div>
+              <p class="talk-title">AI-enabled ModSim for distributed computing</p>
+              <p class="talk-venue">ModSim 2026</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="contact">
+    <div class="wrap footer-grid">
+      <ul class="contact">
+        <li><a href="mailto:sairamvgraju@gmail.com">Email</a></li>
+        <li><a href="https://scholar.google.com/citations?user=RZe7BroAAAAJ&amp;hl=en">Google Scholar</a></li>
+        <li><a href="https://github.com/Sairam954/">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/sairam-sri-vatsavai-27311290/">LinkedIn</a></li>
+        <li><a href="assets/Sairam_Sri_Vatsavai_CV.pdf">Curriculum vitae</a></li>
+      </ul>
+      <p class="colophon">A compact, responsive portfolio designed to keep research, publications, service, and talks easy to scan.</p>
     </div>
-  </section>
+  </footer>
 
-  <section id="publications">
-    <div class="wrap">
-      <h2>Publications</h2>
+  <script>
+    (function () {
+      const visibleCount = 7;
+      const list = document.getElementById('news-list');
+      const toggle = document.getElementById('news-toggle');
+      if (!list || !toggle) return;
 
-      <div class="pub">
-        <div class="pub-year">2026</div>
-        <div>
-          <p class="pub-title">
-            Predicting job turnaround time in large-scale distributed computing
-            environments with graph neural networks
-          </p>
-          <p class="pub-meta">
-            <em>EPJ Research Infrastructures</em>, volume 10, article 14
-            &nbsp;<a class="pub-link" href="#">Paper</a>
-          </p>
-        </div>
-      </div>
+      const items = Array.from(list.querySelectorAll('.news-item'));
+      const olderItems = items.slice(visibleCount);
 
-      <div class="pub">
-        <div class="pub-year">2025</div>
-        <div>
-          <p class="pub-title">
-            CGSim, a SimGrid-based discrete-event simulator for distributed
-            scientific computing
-            <span class="flag">Best short paper</span>
-          </p>
-          <p class="pub-meta">
-            <em>PMBS Workshop at SC 2025</em>
-            &nbsp;<a class="pub-link" href="#">Paper</a>
-          </p>
-        </div>
-      </div>
+      if (!olderItems.length) {
+        toggle.hidden = true;
+        return;
+      }
 
-      <div class="pub">
-        <div class="pub-year">2025</div>
-        <div>
-          <p class="pub-title">
-            HEANA, a hybrid time-amplitude analog optical accelerator with flexible
-            dataflows for energy-efficient CNN inference
-          </p>
-          <p class="pub-meta">
-            <em>ACM Transactions on Design Automation of Electronic Systems</em>,
-            volume 30, issue 2
-            &nbsp;<a class="pub-link" href="#">Paper</a>
-          </p>
-        </div>
-      </div>
+      olderItems.forEach((item) => {
+        item.classList.add('is-older');
+        item.hidden = true;
+      });
 
-      <div class="pub">
-        <div class="pub-year">2023</div>
-        <div>
-          <p class="pub-title">
-            SCONNA, a stochastic computing based optical accelerator for ultra-fast,
-            energy-efficient inference of integer-quantized CNNs
-          </p>
-          <p class="pub-meta">
-            <em>IEEE International Parallel and Distributed Processing Symposium</em>
-            &nbsp;<a class="pub-link" href="#">Paper</a>
-          </p>
-        </div>
-      </div>
-
-      <div class="pub">
-        <div class="pub-year">2022</div>
-        <div>
-          <p class="pub-title">
-            Photonic reconfigurable accelerators for efficient inference of CNNs with
-            mixed-sized tensors
-          </p>
-          <p class="pub-meta">
-            <em>IEEE Transactions on Computer-Aided Design of Integrated Circuits and
-            Systems</em>, volume 41, issue 11
-            &nbsp;<a class="pub-link" href="#">Paper</a>
-          </p>
-        </div>
-      </div>
-
-      <div class="pub">
-        <div class="pub-year">2020</div>
-        <div>
-          <p class="pub-title">
-            PROTEUS, rule-based self-adaptation in photonic NoCs for loss-aware
-            co-management of laser power and performance
-          </p>
-          <p class="pub-meta">
-            <em>IEEE/ACM International Symposium on Networks-on-Chip</em>
-            &nbsp;<a class="pub-link" href="#">Paper</a>
-          </p>
-        </div>
-      </div>
-
-      <p class="subhead">Under review and in preparation</p>
-
-      <div class="pub">
-        <div class="pub-year">2026</div>
-        <div>
-          <p class="pub-title">
-            TRASSE, learned simulator surrogates for scheduling-policy search at
-            distributed scientific computing facilities
-          </p>
-          <p class="pub-meta">Under review</p>
-        </div>
-      </div>
-
-      <div class="pub">
-        <div class="pub-year">2026</div>
-        <div>
-          <p class="pub-title">
-            HOLOS, gradient-based design space exploration for LLM parallelism and
-            hardware co-design
-          </p>
-          <p class="pub-meta">Under review</p>
-        </div>
-      </div>
-
-      <div class="pub">
-        <div class="pub-year">2026</div>
-        <div>
-          <p class="pub-title">
-            Analytical modeling of superconducting digital systems for large
-            language model inference and training
-          </p>
-          <p class="pub-meta">Under review, <em>IEEE Transactions on Computers</em></p>
-        </div>
-      </div>
-
-      <div class="pub">
-        <div class="pub-year">2026</div>
-        <div>
-          <p class="pub-title">
-            An agentic extension of LightshowAI with standardized tool interfaces
-            for XANES analysis
-          </p>
-          <p class="pub-meta">In preparation</p>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <section id="research">
-    <div class="wrap">
-      <h2>Research</h2>
-      <div class="threads">
-
-        <div class="thread one">
-          <h3>Modeling and surrogates for distributed computing</h3>
-          <p>
-            Discrete-event simulators reproduce the behavior of production grids,
-            and learned surrogates stand in for them once a search needs thousands
-            of rollouts. The goal is scheduling-policy search at facilities where a
-            single real experiment costs weeks of grid time.
-          </p>
-        </div>
-
-        <div class="thread two">
-          <h3>Photonic and beyond-CMOS accelerators</h3>
-          <p>
-            Microring and interferometric meshes can carry many computations at once
-            across wavelength, time, spatial mode, and polarization. My work spans
-            the device models, the mapping from workload to degrees of freedom, and
-            the benchmarking that decides whether any of it beats a GPU.
-          </p>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <section id="projects">
-    <div class="wrap">
-      <h2>Projects</h2>
-      <div class="projects">
-
-        <div class="project">
-          <h3><span class="dot one"></span>REDWOOD</h3>
-          <p>
-            A DOE ASCR project on modeling and optimizing scientific
-            cyberinfrastructure. I build the simulation and surrogate stack, CGSim
-            and TRASSE, and the training pipelines that cover 74 WLCG sites.
-          </p>
-        </div>
-
-        <div class="project">
-          <h3><span class="dot two"></span>COSMOS</h3>
-          <p>
-            A Brookhaven LDRD on simulation-driven co-design of multidimensional
-            photonic computing systems. I am a co-investigator leading benchmarking
-            and evaluation against GPU, TPU, and single-degree-of-freedom photonic
-            baselines.
-          </p>
-        </div>
-
-        <div class="project">
-          <h3><span class="dot one"></span>LightshowAI</h3>
-          <p>
-            An X-ray absorption spectroscopy platform for NSLS-II. I work on
-            federated authentication, streaming beamline data, and the agentic layer
-            that exposes surrogate models and materials databases as tools.
-          </p>
-        </div>
-
-        <div class="project">
-          <h3><span class="dot two"></span>HOLOS</h3>
-          <p>
-            A gradient-descent design space exploration framework that searches
-            parallelism strategy and accelerator geometry together, across CMOS and
-            superconducting digital technologies.
-          </p>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <section id="service">
-    <div class="wrap">
-      <h2>Service and talks</h2>
-      <div class="cols">
-
-        <div>
-          <h3>Reviewing</h3>
-          <ul class="plain">
-            <li>IEEE Transactions on Computers</li>
-            <li>IEEE Transactions on Computer-Aided Design</li>
-            <li>SC 2025</li>
-            <li>VLSI Design</li>
-            <li>Great Lakes Symposium on VLSI</li>
-          </ul>
-        </div>
-
-        <div>
-          <h3>Recent talks</h3>
-          <ul class="plain">
-            <li>
-              Simulator-to-surrogate performance modeling for distributed computing
-              <span class="where">PASC 2026, Bern</span>
-            </li>
-            <li>
-              Grid simulation and surrogates for ATLAS
-              <span class="where">ATLAS Software and Computing Week, plenary</span>
-            </li>
-            <li>
-              AI-enabled ModSim for distributed computing
-              <span class="where">ModSim 2026</span>
-            </li>
-          </ul>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-</main>
-
-<footer id="contact">
-  <div class="wrap">
-    <ul class="contact">
-      <li><a href="mailto:sairamvgraju@gmail.com">Email</a></li>
-      <li><a href="https://scholar.google.com/citations?user=RZe7BroAAAAJ&amp;hl=en">Google Scholar</a></li>
-      <li><a href="https://github.com/Sairam954/">GitHub</a></li>
-      <li><a href="https://www.linkedin.com/in/sairam-sri-vatsavai-27311290/">LinkedIn</a></li>
-      <li><a href="assets/Sairam_Sri_Vatsavai_CV.pdf">Curriculum vitae</a></li>
-    </ul>
-    <p class="colophon">
-      Set in Spectral and IBM Plex Sans. The figure above is an add-drop filter,
-      one bus and two microring taps, one for each research thread.
-    </p>
-  </div>
-</footer>
-
+      toggle.hidden = false;
+      toggle.addEventListener('click', function () {
+        const expanded = toggle.getAttribute('aria-expanded') === 'true';
+        olderItems.forEach((item) => {
+          item.hidden = expanded;
+        });
+        toggle.setAttribute('aria-expanded', String(!expanded));
+        toggle.textContent = expanded ? 'Show older news' : 'Hide older news';
+      });
+    }());
+  </script>
 </body>
 </html>
