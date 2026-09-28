@@ -297,6 +297,30 @@
       font-style: normal;
     }
 
+    .review-stat {
+      display: inline-flex;
+      align-items: baseline;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+      padding: 0.5rem 1rem;
+      border: 1px solid #9dc9ce;
+      border-radius: 999px;
+      background: var(--accent-soft);
+    }
+
+    .review-stat-number {
+      font-family: var(--serif);
+      font-weight: 700;
+      font-size: 1.3rem;
+      color: var(--accent);
+      font-variant-numeric: tabular-nums;
+    }
+
+    .review-stat-label {
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
     .flag {
       display: inline-block;
       margin-left: 0.45rem;
@@ -579,7 +603,7 @@
         <a href="#publications">Publications</a>
         <a href="#projects">Projects</a>
         <a href="#service">Service</a>
-        <a href="#talks">Talks</a>
+        <!-- <a href="#talks">Talks</a> -->
         <a href="#contact">Contact</a>
       </nav>
     </div>
@@ -592,8 +616,8 @@
           <p class="eyebrow">Performance Modelling · AI systems · Distributed Computing · Photonic Computing</p>
           <h1>Sairam Sri Vatsavai</h1>
           <p class="role">
-            <strong>Assistant Computational Scientist</strong>, Computational and Data Sciences Department,<br>
-            Brookhaven National Laboratory · Upton, New York
+            <strong>Assistant Computational Scientist</strong>, Computing and Data Sciences Department,<br>
+            Brookhaven National Laboratory, Upton, New York
           </p>
           <p class="intro">
            My research focuses on understanding and improving computing systems across two complementary fronts. First, I evaluate emerging computing technologies like superconducting digital logic
@@ -631,7 +655,20 @@
             <div class="news-date">Sept 2026</div>
             <div>
               <p class="news-head">
-               Three workshop papers accepted at SC 26 in Ai4S, AionHPC and PMBS workshops
+               Paper accepted at Transactions on Computers
+              </p>
+              <p class="news-detail">
+                <ul>
+                  <li> A System-level Exploration of Superconducting Supercomputers for Emerging Workloads </li>
+                </ul>
+              </p>
+            </div>
+          </article>
+          <article class="news-item">
+            <div class="news-date">Sept 2026</div>
+            <div>
+              <p class="news-head">
+               Three workshop papers accepted at <a href="https://sc26.supercomputing.org/2026/04/a-gold-standard-sc26-welcomes-50-workshops-to-chicago/">SC26</a> in Ai4S, AionHPC and PMBS workshops
               </p>
               <p class="news-detail">
                 <ul>
@@ -649,6 +686,21 @@
               <p class="news-head">
                 Delivered a lightning talk and presented a poster at
                 <a href="https://www.bnl.gov/modsim/" target="_blank">ModSim 2026</a>, Seattle, WA
+              </p>
+              <p class="news-detail">
+                Presented “AI-Enabled ModSim for Distributed Computing: A Simulator-to-Surrogate Methodology for Scalable Performance Modeling.”
+              </p>
+            </div>
+          </article>
+           <article class="news-item">
+            <div class="news-date">Aug 2026</div>
+            <div>
+              <p class="news-head">
+                Two Papers Accepted at IEEE Generative AI for Secure Systems <a href="https://gaiss.info/" target="_blank">(GAISS)</a>
+                <ul>
+                <li>HorizonGuard: Measuring Hindsight Contamination in Generative AI Cyber Threat Intelligence</li>
+                <li>ChronoEntity: Auditable Agentic AI for Point-in-Time Entity Integrity in Financial Data Pipelines</li>
+                </ul>
               </p>
               <p class="news-detail">
                 Presented “AI-Enabled ModSim for Distributed Computing: A Simulator-to-Surrogate Methodology for Scalable Performance Modeling.”
@@ -793,86 +845,46 @@
             <div class="pub-year">2026</div>
             <div>
               <p class="pub-title">Predicting job turnaround time in large-scale distributed computing environments with graph neural networks</p>
-              <p class="pub-meta"><em>EPJ Research Infrastructures</em>, volume 10, article 14 &nbsp;<a class="pub-link" href="#">Paper</a></p>
+              <p class="pub-meta"><em>EPJ Research Infrastructures</em>, volume 10, article 14 &nbsp;<a class="pub-link" href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=RZe7BroAAAAJ&amp;citation_for_view=RZe7BroAAAAJ:u_35RYKgDlwC">Paper</a></p>
+            </div>
+          </article>
+
+          <article class="pub">
+            <div class="pub-year">2026</div>
+            <div>
+              <p class="pub-title">MCP agents in PanDA</p>
+              <p class="pub-meta"><em>Journal of Instrumentation</em>, volume 21, issue 07, C07030 &nbsp;<a class="pub-link" href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=RZe7BroAAAAJ&amp;citation_for_view=RZe7BroAAAAJ:4OULZ7Gr8RgC">Paper</a></p>
+            </div>
+          </article>
+
+          <article class="pub">
+            <div class="pub-year">2026</div>
+            <div>
+              <p class="pub-title">Machine learning-driven predictive resource management in complex science workflows</p>
+              <p class="pub-meta"><em>International Journal of Modern Physics A</em>, volume 41, issue 03, 2650025 &nbsp;<a class="pub-link" href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=RZe7BroAAAAJ&amp;citation_for_view=RZe7BroAAAAJ:NaGl4SEjCO4C">Paper</a></p>
             </div>
           </article>
 
           <article class="pub">
             <div class="pub-year">2025</div>
             <div>
-              <p class="pub-title">CGSim, a SimGrid-based discrete-event simulator for distributed scientific computing <span class="flag">Best short paper</span></p>
-              <p class="pub-meta"><em>PMBS Workshop at SC 2025</em> &nbsp;<a class="pub-link" href="#">Paper</a></p>
+              <p class="pub-title">Simulating the ATLAS distributed computing infrastructure to develop and optimize workload allocation strategies</p>
+              <p class="pub-meta"><em>ATL-COM-SOFT-2025-045</em> &nbsp;<a class="pub-link" href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=RZe7BroAAAAJ&amp;citation_for_view=RZe7BroAAAAJ:SeFeTyx0c_EC">Paper</a></p>
             </div>
           </article>
 
           <article class="pub">
             <div class="pub-year">2025</div>
             <div>
-              <p class="pub-title">HEANA, a hybrid time-amplitude analog optical accelerator with flexible dataflows for energy-efficient CNN inference</p>
-              <p class="pub-meta"><em>ACM Transactions on Design Automation of Electronic Systems</em>, volume 30, issue 2 &nbsp;<a class="pub-link" href="#">Paper</a></p>
-            </div>
-          </article>
-
-          <article class="pub">
-            <div class="pub-year">2023</div>
-            <div>
-              <p class="pub-title">SCONNA, a stochastic computing based optical accelerator for ultra-fast, energy-efficient inference of integer-quantized CNNs</p>
-              <p class="pub-meta"><em>IEEE International Parallel and Distributed Processing Symposium</em> &nbsp;<a class="pub-link" href="#">Paper</a></p>
-            </div>
-          </article>
-
-          <article class="pub">
-            <div class="pub-year">2022</div>
-            <div>
-              <p class="pub-title">Photonic reconfigurable accelerators for efficient inference of CNNs with mixed-sized tensors</p>
-              <p class="pub-meta"><em>IEEE Transactions on Computer-Aided Design of Integrated Circuits and Systems</em>, volume 41, issue 11 &nbsp;<a class="pub-link" href="#">Paper</a></p>
-            </div>
-          </article>
-
-          <article class="pub">
-            <div class="pub-year">2020</div>
-            <div>
-              <p class="pub-title">PROTEUS, rule-based self-adaptation in photonic NoCs for loss-aware co-management of laser power and performance</p>
-              <p class="pub-meta"><em>IEEE/ACM International Symposium on Networks-on-Chip</em> &nbsp;<a class="pub-link" href="#">Paper</a></p>
+              <p class="pub-title">Error analysis of globally distributed workflow management system</p>
+              <p class="pub-meta"><em>Proceedings of the SC'25 Workshops of the International Conference for High Performance Computing</em> &nbsp;<a class="pub-link" href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=RZe7BroAAAAJ&amp;citation_for_view=RZe7BroAAAAJ:35N4QoGY0k4C">Paper</a></p>
             </div>
           </article>
         </div>
 
-        <p class="subhead">Under review and in preparation</p>
-
-        <!-- <div class="pub-list">
-          <article class="pub">
-            <div class="pub-year">2026</div>
-            <div>
-              <p class="pub-title">TRASSE, learned simulator surrogates for scheduling-policy search at distributed scientific computing facilities</p>
-              <p class="pub-meta">Under review</p>
-            </div>
-          </article>
-
-          <article class="pub">
-            <div class="pub-year">2026</div>
-            <div>
-              <p class="pub-title">HOLOS, gradient-based design space exploration for LLM parallelism and hardware co-design</p>
-              <p class="pub-meta">Under review</p>
-            </div>
-          </article>
-
-          <article class="pub">
-            <div class="pub-year">2026</div>
-            <div>
-              <p class="pub-title">Analytical modeling of superconducting digital systems for large language model inference and training</p>
-              <p class="pub-meta">Under review, <em>IEEE Transactions on Computers</em></p>
-            </div>
-          </article>
-
-          <article class="pub">
-            <div class="pub-year">2026</div>
-            <div>
-              <p class="pub-title">An agentic extension of LightshowAI with standardized tool interfaces for XANES analysis</p>
-              <p class="pub-meta">In preparation</p>
-            </div>
-          </article>
-        </div> -->
+        <div class="hero-links" aria-label="More publications">
+          <a class="button-link" href="https://scholar.google.com/citations?user=RZe7BroAAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer">More on Google Scholar</a>
+        </div>
       </div>
     </section>
 
@@ -914,6 +926,12 @@
           <p class="section-note">Reviewing activity separated by journals and conferences for faster scanning.</p>
         </div>
 
+        <!-- placeholder: update the number below as you complete reviews -->
+        <div class="review-stat">
+          <span class="review-stat-number">40+</span>
+          <span class="review-stat-label">papers reviewed to date</span>
+        </div>
+
         <div class="table-wrap">
           <table class="service-table">
             <tbody>
@@ -923,6 +941,9 @@
                   <ul class="review-list">
                     <li>IEEE Transactions on Computers</li>
                     <li>IEEE Transactions on Computer-Aided Design</li>
+                    <li>IEEE ACCESS</li>
+                    <li>Optical & Quantum Electronics</li>
+                    <li>Memories (Elsevier)</li>
                   </ul>
                 </td>
               </tr>
@@ -930,9 +951,12 @@
                 <th scope="row">Conferences</th>
                 <td>
                   <ul class="review-list">
-                    <li>SC 2025</li>
-                    <li>VLSI Design</li>
-                    <li>Great Lakes Symposium on VLSI</li>
+                    <li>SC25,SC26 </li>
+                    <li>VLSID23, VLSID24, VLSID25, VLSID26</li>
+                    <li>GLSVLSI24, GLSVLSI25, GLSVLSI26</li>
+                    <li>ISVLSI24</li>
+                    <li>ISPED23</li>
+                    <li>CODES+ISSS23</li>
                   </ul>
                 </td>
               </tr>
@@ -942,7 +966,7 @@
       </div>
     </section>
 
-    <section id="talks">
+    <!-- <section id="talks">
       <div class="wrap">
         <div class="section-heading">
           <h2>Talks</h2>
@@ -975,7 +999,7 @@
           </article>
         </div>
       </div>
-    </section>
+    </section> -->
   </main>
 
   <footer id="contact">
